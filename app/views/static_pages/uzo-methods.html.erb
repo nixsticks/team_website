@@ -1,0 +1,82 @@
+<section = "flatten">
+
+school = { 
+  :name => "Happy Funtime School",
+  :location => "NYC",
+  :instructors => [ 
+    {:name=>"Blake", :subject=>"being awesome" },
+    {:name=>"Ashley", :subject=>"being better than blake"},
+    {:name=>"Jeff", :subject=>"karaoke"}
+  ],
+  :students => [ 
+    {:name => "Marissa", :grade => "B"},
+    {:name=>"Billy", :grade => "F"},
+    {:name => "Frank", :grade => "A"},
+    {:name => "Sophie", :grade => "C"}
+  ]
+}
+=begin 
+calling the flatten method on school hash has 
+=end
+
+school.flatten  = [
+:name, 
+"Happy Funtime School",
+:location,
+"NYC".
+:instructors,
+[
+  {:name => "Blake", :subject=>"being awesome"},
+  {:name=>"Ashley", :subject=>"being better than Blake"},
+  {:name=>"Jeff", :subject=>"Karaoke"}
+],
+:students,
+[{:name=>"Marissa", :grade=>"B"},
+  {:name=>"Billy", :grade=>"F"},
+  {:name=>"Frank", :grade=>"A"},
+  {:name=>"Sophie", :grade=>"C"}
+]
+
+school.flatten(2) = [
+  :name,
+ "Happy Funtime School",
+ :location,
+ "NYC",
+ :instructors,
+ {:name=>"Blake", :subject=>"being awesome"},
+ {:name=>"Ashley", :subject=>"being better than blake"},
+ {:name=>"Jeff", :subject=>"karaoke"},
+ :students,
+ {:name=>"Marissa", :grade=>"B"},
+ {:name=>"Billy", :grade=>"F"},
+ {:name=>"Frank", :grade=>"A"},
+ {:name=>"Sophie", :grade=>"C"}]
+]
+
+
+=begin
+Returns a new array that is a one-dimensional flattening of this hash. 
+That is, for every key or value that is an array, extract its elements into the new array. 
+Unlike Array#flatten, this method does not flatten recursively by default. 
+The optional level argument determines the level of recursion to flatten.
+Hence why the result of calling school.flatten(3) is the same as when school.flatten(2) is called
+=end
+
+
+school.flatten(3) = [
+  :name,
+ "Happy Funtime School",
+ :location,
+ "NYC",
+ :instructors,
+ {:name=>"Blake", :subject=>"being awesome"},
+ {:name=>"Ashley", :subject=>"being better than blake"},
+ {:name=>"Jeff", :subject=>"karaoke"},
+ :students,
+ {:name=>"Marissa", :grade=>"B"},
+ {:name=>"Billy", :grade=>"F"},
+ {:name=>"Frank", :grade=>"A"},
+ {:name=>"Sophie", :grade=>"C"}
+]
+
+
