@@ -1,0 +1,99 @@
+<h1>Let's play Ruby Roulette!</h1>
+
+<div id="wrapper">
+  <div class="button">
+    <%= link_to "Click here to be enlightened", '#', class: "btn btn-large btn-primary" %>
+  </div>
+  <div id="methods">
+    <div class="method">
+      <h1>inject</h1>
+
+      <p>Enumerable#inject can be used on any enumerable object in Ruby -- for example, arrays, ranges, and hashes.</p>
+
+      <p>It takes an optional argument for the initial value of an accumulator, and either:</p>
+
+      <ul>
+        <li>a block with two parameters, one for the accumulator value and one for each element in the collection.</li>
+        <li>a symbol representing a named method.</li>
+      </ul>
+
+      <p>If you pass a block to inject, each element in the collection is passed to the block. The result of that operation is then added to the accumulator value. This allows you to sum up the result of the block operation on each element of the collection.</p>
+
+      <p>If you pass a symbol (a named method) to inject instead of a block, each element of the collection will be passed to the method. Once again, the result of each operation is added to the accumulator value.</p>
+
+      <p>If you don't pass in the optional argument for the initial value of the accumulator, the initial value is set to zero (before the first element is added to it).</p>
+
+      <p>inject <strong>returns</strong> the final value of the accumulator.</p>
+
+      <p><strong>But enough with the technical talk...</strong></p>
+
+      <p>How about an example?</p>
+
+      <blockquote>myarray = [1, 2, 3, 4, 5, 6]<br>
+      myarray.inject {|sum, n| sum + n}<br>
+      => 21</blockquote>
+
+      <p>This is arguably the simplest way to use inject. "sum" represents the accumulator value. Think of it as a counter. "n" represents each individual element in the collection.</p>
+
+      <p>Let's walk through it step by step.</p>
+
+      <p>The operation in the block tells inject to add n to the accumulator.</p>
+
+      <p>So sum begins as 0. Then 1, the first element in the array, is added to it. Now the accumulator is 1.</p>
+
+      <p>inject passes the next element, 2, to the block. Now the accumulator is 1 + 2 = 3.</p>
+
+      <p>inject passes the next element, 3, to the block. Now the accumulator is 3 + 3 = 6.</p>
+
+      <p>You get the picture.</p>
+
+      <p>Note that inject has no argument passed to it, and so its initial value was 0.</p>
+
+      <blockquote>myarray.inject(2) {|sum, n| sum + n}<br>
+      => 23 </blockquote>
+
+      <p>Notice how this result differs from that of the previous operation by 2? That's because we started with the accumulator set at 2.</p>
+
+      <p>Now let's try an example without any numbers in it.</p>
+
+      <blockquote>
+        words = ["rabbits", "bunnies", "Chris", "supercalifragilisticexpialidocious"]<br><br>
+        longest_word = words.inject do |memo, word|<br>
+        &nbsp;&nbsp;if memo.length > word.length<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;memo<br>
+        &nbsp;&nbsp;else<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;word</br>
+        &nbsp;&nbsp;end<br>
+        end<br><br>
+        longest_word<br>
+        => "supercalifragilisticexpialidocious"
+      </blockquote>
+
+      <p>First of all, DON'T be confused by the word <i>memo</i>. It's just a word I used to represent the accumulator.</p>
+
+      <p>Let's walk through what's happening step by step.</p>
+
+      <p>As it iterates through the collection, the block tests whether the memo is longer than each word.</p>
+
+      <p>If it is, the memo is set to the word. If it is not, the memo remains the same.</p>
+
+      <p>Let's say we're on the third operation, and memo is currently set to "Chris."</p>
+
+      <p>Now "supercalifragilisticexpialidocious" is being evaluated. Is "Chris".length larger than "supercalifragilisticexpialidocious".length? Of course not. Therefore, memo is set to "supercalifragilisticexpialidocious".</p>
+
+      <p>Since that was the last element, memo's final value is "supercalifragilisticexpialidocious" -- and that is what inject returns.</p>
+
+      <p>The if statement can be condensed into memo.length > word.length ? memo : word, but that's a subject for another time! Perhaps you can ask one of my awesome <%= link_to "teammates", about_path %> how to do that.</p>
+
+      <p>Now you know some very basic ways to use the method inject!</p>
+    </div>
+  </div>
+</div>​
+
+<script>
+$(document).ready(function() {
+  $('.button').click(function() {
+    $('#methods .method').toggle().stopPropagation();
+  });
+})
+</script>
