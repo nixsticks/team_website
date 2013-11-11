@@ -32,9 +32,13 @@ textarea {
   margin: 0 auto;
 }
 
-// .method {
-//   visibility: hidden
-// }
+#methods .method {
+  display: none;
+}
+
+.button {
+  text-align: center
+}
 
 /* typography */
 
