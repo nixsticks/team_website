@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-/* For now, I copied this from MHartl. Sorry MHartl! Later, when we change and update our page, we will add our own CSS.
+/* For now, I copied this CSS with minor alterations from MHartl. Sorry MHartl! Later, when we change and update our page, we will add our own CSS.
 
 /* universal */
 
@@ -74,4 +74,15 @@ p {
 }
 
 
-/*  */
+/* About Me pages */
+.bio {
+  text-align: center
+}
+
+.resource_recommendations {
+  text-align: center;
+}
+
+.personal_image {
+  text-align: center;
+}
