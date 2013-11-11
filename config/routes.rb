@@ -3,6 +3,8 @@ Website::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/nikki',   to: 'static_pages#nikki',   via: 'get'
   match '/chris',   to: 'static_pages#chris',   via: 'get'
+  match '/sean',    to: 'static_pages#sean',   via: 'get'
+  match '/uzo',     to: 'static_pages#uzo',   via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
