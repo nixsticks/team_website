@@ -27,6 +27,11 @@ textarea {
   }
 }
 
+#wrapper {
+  width: 500px;
+  margin: 0 auto;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,10 +79,6 @@ p {
 
 
 /* About Me pages */
-
-.bio {
-  padding: 0px 50px;
-}
 
 .resource_recommendations {
   text-align: center;
