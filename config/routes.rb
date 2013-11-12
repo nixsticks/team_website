@@ -5,6 +5,7 @@ Website::Application.routes.draw do
   match '/chris',   to: 'static_pages#chris',   via: 'get'
   match '/sean',    to: 'static_pages#Sean',   via: 'get'
   match '/uzo',     to: 'static_pages#uzo',   via: 'get'
+  match '/roulette',            to: 'static_pages#ruby_methods', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
