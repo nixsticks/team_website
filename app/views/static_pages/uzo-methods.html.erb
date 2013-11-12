@@ -1,7 +1,84 @@
-<section = "flatten">
+<p>
+  Variables are an important concept in programming; probably because without them programmers wouldn't have a way to store and access data, which is the backbone of any programm/application.
+</p> 
 
-school = { 
-  :name => "Happy Funtime School",
+<p>
+  So what are variables? Conside this:<br>
+x = 10<br>
+The above is a simple algebratic equation that says:<br>
+"X is set to always equal 10"
+  <p>
+    So each time we see x, in the context of this special mathematical problem, we know that it equals 10. This simply means that we can solve simple equations like this:<br>
+    x * 2 = 20<br>
+    because we know that x is set to equal 10.
+  </p>
+</p>
+
+<p>
+  In Ruby, like in algebra, we say that <b>x is the variable that holds the number 10.</b> Or more simply,<b> x is the placeholder for the number 10</b>
+</p>
+
+<blockquote>Variables are placeholders for, or references to, concepts such as a single number (or a list of numbers), a word (or a list of words), and any other form of data or information that exists in the world.
+</blockquote>
+
+<p>
+  Building on this idea of a variable is an <b>ARRAY</b>. Arrays are simply a collection of variables. To be effective, we almost always have to hold a collection of numbers or words - concepts - in a single variable. For example:
+  <p>
+    school = ["name", "The Flatiron School", "location", "NYC", "founded_in", 2013, instuctors", "Blake", "Ashley", "Jeff", "subject", "being awesome", "being better than blake", "karaoke", "students", "Marissa", "grade", "A"]
+  </p>
+
+  <p> School here is an array - collection of concepts - that is holds information about a particular school. But because of the way it is arranged we cannot intutively make sense of the information it contains. 
+  </p>
+
+  <p>
+    Using <b>Hashes</b> will help us intutively understand the information contained/held in the array called school. Hashes have a different storage format and way to define each piece of data/information held in our school array. Rather than having an assigned position in a list, data within a hash is given a key that points to them.  
+  </p>
+<p>
+Using the school array as an example we have:<br>
+school = {<br> 
+  name => "Happy Funtime School",<br>
+  location => "NYC",<br>
+  instructors => [<br> 
+    {:name=>"Blake", :subject=>"being awesome" },<br>
+    {:name=>"Ashley", :subject=>"being better than blake"},<br>
+    {:name=>"Jeff", :subject=>"karaoke"}<br>
+  ],<br>
+  :students => [ <br>
+    {:name => "Marissa", :grade => "B"},<br>
+    ]<br>
+  }<br>
+
+By using the curly brackets <b>{}</b>we have converted the school array into a school hash. You are probably wondering how the school array differs from the school hash. The differentiating factor lies in both the use of a curly bracket <b>AND</b>the use of what is called the key/value pair.<br>
+For example:<br>
+name => "Happy Funtime School"<br>
+Here the variable <b>name</b> is the key. And<b> => </b> is called X and acts as the pointer to the <b>value</b> "Happy Funtime School".
+
+
+
+</p>
+ 
+</p>
+
+
+=begin
+In Ruby, an array is a list of items in order (like vitamins, minerals, and chocolates) while a hash is 
+
+Those keeping score at home might be interested to know that the Rails website framework makes 771 calls to Array.each, 558 calls to Array.map, and 1,521 calls to Array.empty?, not to mention the 2,103 times it accesses a single element inside an array.
+
+But these are just numbers. How do you use arrays in Ruby?
+
+CREATING ARRAYS
+
+Most of the time, you will be working with arrays of database objects. Other times, you will need to make a simple array of your own.
+
+If you have used Perl, PHP, Python, or other scripting languages, the syntax of Ruby might seem at least remotely familiar to you. If you have installed Ruby on your computer, you can also use the “irb” command-line program, which runs lines of code interactively.
+
+You can make an array by using square brackets like this:
+
+<section class = "flatten">
+
+<p>school = {<br> 
+  :name => "Happy Funtime School",<br>
   :location => "NYC",
   :instructors => [ 
     {:name=>"Blake", :subject=>"being awesome" },
