@@ -1,68 +1,65 @@
-<!--***********************************************
-Will explain the empty?, index, and slice methods on String objects
+<h1> String#empty? method</h1> 
+<h2>The empty? method returns true if str has a length of zero,false otherwise.</h2>
+<p>Here are a few examples:<br/></p>
+<ul> 
+	<li>"hello".empty?   #=> false</li>
+	<li>" ".empty?       #=> false</li>
+	<li>"".empty?        #=> true</li>
+<ul>
 
-empty? → true or false
-Returns true if str has a length of zero.
-"hello".empty?   #=> false
-" ".empty?       #=> false
-"".empty?        #=> true
+ 
+<h1>String#index(substring [, offset])</h1>
+<h2>The index method returns the index(a Fixnum) of the first occurrence of the substring or pattern in the string, or nil if substring is not found.
 
-
-index(substring [, offset]) -Returns Integer or nil
-
-Returns the index of the first occurrence of the given substring or pattern in str. 
-Returns nil if not found. 
 If the optional parameter [, offset] is present, it specifies the position in the string to begin the search.
+</h2>
 
-Examples
+<p>Here are a few examples:<br/></p>
+<ul>
+	<li>"hello".index('e')             #=> 1</li>
+	<li>"hello".index('lo')            #=> 3</li>
+	<li>"hello".index('a')             #=> nil</li>
+</ul>
 
-"hello".index('e')             #=> 1
-"hello".index('lo')            #=> 3
-"hello".index('a')             #=> nil
-"hello".index(/[aeiou]/, -3)   #=> 4
+
+<h1>String#slice</h1>
+
+<h2>The slice method is overloaded and accepts several different arg types. Slice returns either a String or nil. </h2>
+<ul>
+	<li>slice(index)</li>
+	<li>slice(start,length)</li>
+	<li>slice(range)</li>
+	<li>slice(match_str)</li>
+</ul>
 
 
+<ol>
+<li>1)If passed a single index, returns a substring of one character at that index.</li>
+<li>If passed a start index and a length, returns a substring containing length characters.</li>
+<li>3)If passed a range, its beginning and end are interpreted as offsets delimiting the substring to be returned.</li>
+<li>If a match_str is given, that string is returned if it occurs in the string.</li>
+</ol>
 
-SLICE
-
-PUT THESE INTO ORDERED LIST
-1)slice(index) → new_str or nil
-2)slice(start, length) → new_str or nil
-3)slice(range) → new_str or nil
-4)slice(match_str) → new_str or nil
-
-As you can see there are multiple methods overloaded to slice, each with different arg types
-
-PUT THESE INTO ORDERED LIST
-1)If passed a single index, returns a substring of one character at that index. 
-2)If passed a start index and a length, returns a substring containing length characters 
-3)If passed a range, its beginning and end are interpreted as offsets delimiting the substring to be returned.
-4)If a match_str is given, that string is returned if it occurs in the string.
-
-For the first 3 cases above if an index is negative, it is counted from the end of the string. 
+<p>For the first 3 cases above if an index is negative, it is counted from the end of the string. 
 Note: For the case 2 and case 3 the starting index is just before a character.
 
 Slice returns nil if the initial index falls outside the string or the length is negative.
 
-In addition, 4)returns nil the match string cannot be found.
+In addition, 4)returns nil if the match string cannot be found.
+</p>
 
-Examples
-a = "hello there"
-
-a[1]                   #=> "e"
-a[2, 3]                #=> "llo"
-a[2..3]                #=> "ll"
-
-a[-3, 2]               #=> "er"
-a[7..-2]               #=> "her"
-a[-4..-2]              #=> "her"
-a[-2..-4]              #=> ""
-
-a[11, 0]               #=> ""
-a[11]                  #=> nil
-a[12, 0]               #=> nil
-a[12..-1]              #=> nil
-
-
-a["lo"]                #=> "lo"
-a["bye"]               #=> nil
+<h3>In the examples below a = "hello there" and a.length=10</h3>
+<ul>
+<li>a[1]                   #=> "e"</li>
+<li>a[2, 3]                #=> "llo"</li>
+<li>a[2..3]                #=> "ll"</li>
+<li>a[-3, 2]               #=> "er"</li>
+<li>a[7..-2]               #=> "her"</li>
+<li>a[-4..-2]              #=> "her"</li>
+<li>a[-2..-4]              #=> ""</li>
+<li>a[11, 0]               #=> ""</li>
+<li>a[11]                  #=> nil</li>
+<li>a[12, 0]               #=> nil</li>
+<li>a[12..-1]              #=> nil</li>
+<li>a["lo"]                #=> "lo"</li>
+<li>a["bye"]               #=> nil</li>
