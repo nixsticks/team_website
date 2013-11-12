@@ -1,8 +1,13 @@
 <h1>Let's play Ruby Roulette!</h1>
 
+<!-- http://www.gifs.net/Animation11/Hobbies_and_Entertainment/Games_and_Gambling/Roulette_spins.gif"  -->
+
 <div id="wrapper">
   <div class="button">
-    <button class="btn btn-large btn-primary">Click here to be enlightened.</button>
+    <img src="http://stream1.gifsoup.com/view2/4807797/roulette-wheel-o.gif" id="moving" class="on" freezeframe>
+    <p></p>
+    <h2>Click the roulette wheel for enlightenment.</h2>
+<!--     <button class="btn btn-large btn-primary">Click here to be enlightened.</button> -->
   </div>
   <div id="methods">
     <div class="method">
@@ -25,9 +30,17 @@
 
 <script>
 $(document).ready(function() {
+
+  $('#moving').click(function() {
+    if ($(this).attr("class") == "on") {
+      this.src = this.src.replace("http://stream1.gifsoup.com/view2/4807797/roulette-wheel-o.gif","http://i43.tinypic.com/1601ndh.png");
+    } else {
+      this.src = this.src.replace("http://i43.tinypic.com/1601ndh.png","http://stream1.gifsoup.com/view2/4807797/roulette-wheel-o.gif");
+    }
+    $(this).toggleClass("on");
+
   var methods = $('#methods .method');
 
-  $('.button').click(function() {
     if (methods.is(":visible")) {
       methods.hide();
     }
