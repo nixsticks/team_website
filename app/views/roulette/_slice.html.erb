@@ -1,0 +1,43 @@
+
+
+PUT THESE INTO ORDERED LIST
+1)slice(index) → new_str or nil
+2)slice(start, length) → new_str or nil
+3)slice(range) → new_str or nil
+4)slice(match_str) → new_str or nil
+
+As you can see there are multiple methods overloaded to slice, each with different arg types
+
+PUT THESE INTO ORDERED LIST
+1)If passed a single index, returns a substring of one character at that index. 
+2)If passed a start index and a length, returns a substring containing length characters 
+3)If passed a range, its beginning and end are interpreted as offsets delimiting the substring to be returned.
+4)If a match_str is given, that string is returned if it occurs in the string.
+
+For the first 3 cases above if an index is negative, it is counted from the end of the string. 
+Note: For the case 2 and case 3 the starting index is just before a character.
+
+Slice returns nil if the initial index falls outside the string or the length is negative.
+
+In addition, 4)returns nil the match string cannot be found.
+
+Examples
+a = "hello there"
+
+a[1]                   #=> "e"
+a[2, 3]                #=> "llo"
+a[2..3]                #=> "ll"
+
+a[-3, 2]               #=> "er"
+a[7..-2]               #=> "her"
+a[-4..-2]              #=> "her"
+a[-2..-4]              #=> ""
+
+a[11, 0]               #=> ""
+a[11]                  #=> nil
+a[12, 0]               #=> nil
+a[12..-1]              #=> nil
+
+
+a["lo"]                #=> "lo"
+a["bye"]               #=> nil

@@ -1,13 +1,9 @@
 <h1>Let's play Ruby Roulette!</h1>
-
-<!-- http://www.gifs.net/Animation11/Hobbies_and_Entertainment/Games_and_Gambling/Roulette_spins.gif"  -->
-
 <div id="wrapper">
   <div class="button">
     <img src="http://i41.tinypic.com/fm6mj8.gif" id="moving" class="on" freezeframe>
-    <p></p>
+    <br><br>
     <h2>Click the roulette wheel for enlightenment.</h2>
-<!--     <button class="btn btn-large btn-primary">Click here to be enlightened.</button> -->
   </div>
   <div id="methods">
     <div class="method">
@@ -25,14 +21,29 @@
     <div class="method">
       <%= render 'roulette/invert' %>
     </div>
+
+    <div class="method">
+      <%= render 'roulette/empty' %>
+    </div>
+
+    <div class="method">
+      <%= render 'roulette/index' %>
+    </div>
+
+    <div class="method">
+      <%= render 'roulette/slice' %>
+    </div>
   </div>
 </div>​
+
+
+<!-- JQuery script to animate the roulette wheel -->
 
 <script>
 $(document).ready(function() {
 
   $('#moving').click(function() {
-    var images = ['http://i43.tinypic.com/20ti15z.gif', 'http://i42.tinypic.com/2wogbb7.gif', 'http://i42.tinypic.com/293j8nc.gif', 'http://i44.tinypic.com/1zz749f.gif', 'http://i42.tinypic.com/x4j7fo.gif', 'http://i39.tinypic.com/apjrc2.gif']
+    var images = ['http://i43.tinypic.com/20ti15z.gif', 'http://i42.tinypic.com/2wogbb7.gif', 'http://i42.tinypic.com/293j8nc.gif', 'http://i44.tinypic.com/1zz749f.gif', 'http://i42.tinypic.com/x4j7fo.gif', 'http://i39.tinypic.com/apjrc2.gif'];
     var randomImage = images[Math.floor(Math.random() * images.length)];
     if ($(this).attr("class") == "on") {
       this.src = randomImage;
@@ -41,7 +52,7 @@ $(document).ready(function() {
     }
     $(this).toggleClass("on");
 
-  var methods = $('#methods .method');
+    var methods = $('#methods .method');
 
     if (methods.is(":visible")) {
       methods.hide();
